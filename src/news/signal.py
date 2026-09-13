@@ -15,9 +15,8 @@ from __future__ import annotations
 
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import List
 
-import numpy as np
 import pandas as pd
 
 from src.news.feeds import Headline

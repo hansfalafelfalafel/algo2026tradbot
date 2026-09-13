@@ -71,8 +71,10 @@ def format_ls_report(res: dict) -> str:
         "=" * 64,
         f"{'Метрика':<26}{'Стратегия':>12}{'Посл. треть':>13}{'Buy&Hold':>12}",
         "-" * 64,
-        f"{'Доходность':<26}{pct(m['total_return']):>12}{pct(rec['total_return']):>13}{pct(bh['total_return']):>12}",
+        (f"{'Доходность':<26}{pct(m['total_return']):>12}"
+         f"{pct(rec['total_return']):>13}{pct(bh['total_return']):>12}"),
         f"{'Коэф. Шарпа':<26}{m['sharpe']:>12.2f}{rec['sharpe']:>13.2f}{bh['sharpe']:>12.2f}",
-        f"{'Макс. просадка':<26}{pct(m['max_drawdown']):>12}{pct(rec['max_drawdown']):>13}{pct(bh['max_drawdown']):>12}",
+        (f"{'Макс. просадка':<26}{pct(m['max_drawdown']):>12}"
+         f"{pct(rec['max_drawdown']):>13}{pct(bh['max_drawdown']):>12}"),
         "=" * 64,
     ])

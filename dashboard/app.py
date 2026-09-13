@@ -11,7 +11,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
@@ -211,7 +210,10 @@ with tab_control:
     cc1, cc2, cc3 = st.columns(3)
     mode = cc1.selectbox("Режим исполнения",
                          ["manual", "semi", "auto"],
-                         index=["manual", "semi", "auto"].index(ctrl.get("mode") or cfg.execution.get("mode", "manual")),
+                         index=["manual", "semi", "auto"].index(
+                             ctrl.get("mode")
+                             or cfg.execution.get("mode", "manual")
+                         ),
                          help="manual — только подтверждённые вручную; semi — авто в лимитах, "
                               "крупные на подтверждение; auto — полностью авто в лимитах.")
     paused = cc2.toggle("Пауза", value=bool(ctrl.get("paused")))

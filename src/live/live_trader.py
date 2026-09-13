@@ -8,7 +8,6 @@
 """
 from __future__ import annotations
 
-import time
 from typing import Dict, Optional, Protocol
 
 from src.live.execution import ExecutionController, RiskLimits
@@ -151,7 +150,11 @@ class LiveTrader:
                 if self.broker.execute(o, prices):
                     self.current_weights[o["ticker"]] = o["weight_to"]
                     self.controller.register_trade()
-                    state.append_history({"event": "trade(approved)", **{k: o.get(k) for k in ("ticker", "side", "rub", "lots")}})
+                    trade = {
+                        k: o.get(k)
+                        for k in ("ticker", "side", "rub", "lots")
+                    }
+                    state.append_history({"event": "trade(approved)", **trade})
             elif o.get("decision") == "rejected":
                 continue  # выкидываем
             else:

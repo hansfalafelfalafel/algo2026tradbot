@@ -1,8 +1,6 @@
 """Бэктест портфельного агента/ансамбля на отложенной выборке."""
 from __future__ import annotations
 
-from pathlib import Path
-
 import numpy as np
 
 from src.agent.ensemble import make_portfolio_env

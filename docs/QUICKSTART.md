@@ -16,7 +16,7 @@ python --version
 Перейдите в папку проекта:
 
 ```bash
-cd rl-trading-tbank
+cd algo2026tradbot
 ```
 
 Создайте виртуальное окружение:
