@@ -1,0 +1,38 @@
+# --- Машинное обучение / RL ---
+gymnasium>=1.0.0
+stable-baselines3>=2.0.0
+torch>=2.0.0
+
+# --- Данные ---
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+PyYAML>=6.0
+python-dotenv>=1.0
+
+# --- Новости / сигналы ---
+feedparser>=6.0          # чтение RSS-лент новостей
+requests>=2.28           # Telegram Bot API и LLM-запросы
+# openai>=1.0            # опционально: backend='llm' (OpenAI-совместимый API)
+# transformers>=4.30     # опционально: backend='hf' (RuBERT-sentiment)
+
+# --- Дашборд ---
+streamlit>=1.30
+streamlit-autorefresh>=1.0
+plotly>=5.15
+
+# --- Планировщик Telegram-рекомендаций ---
+schedule>=1.2
+
+# --- Парный трейдинг (коинтеграция) ---
+statsmodels>=0.14
+
+# --- Invest API Т-Банка ---
+# ВНИМАНИЕ: SDK ставится ОТДЕЛЬНОЙ командой (не через этот файл), т.к. лежит не на
+# обычном PyPI. Актуальный официальный пакет — t-tech-investments (импорт
+# t_tech.invest). Установка:
+#   pip install t-tech-investments \
+#     --index-url https://opensource.tbank.ru/api/v4/projects/238/packages/pypi/simple
+# Код проекта написан под tinkoff.invest, но совместим с новым SDK автоматически
+# (слой совместимости в src/__init__.py подменяет tinkoff.invest -> t_tech.invest).
+# Старый вариант (если доступен) — pip install tinkoff-investments — тоже подойдёт.

@@ -1,0 +1,15 @@
+{
+  "architecture": "direction_quantiles_plus_side_specific_edge",
+  "horizon_min": 15,
+  "max_entry_spread_bp": 2.0,
+  "fee_per_side_bp": 0.5,
+  "historical_only": true,
+  "test_days": 11,
+  "trades": 75,
+  "net_mean_bp": -1.0611511663595836,
+  "net_median_bp": 4.226519584655762,
+  "winsorized_net_mean_bp": -1.0082187968095153,
+  "net_sum_bp": -79.58633747696877,
+  "hit_rate": 0.5866666666666667,
+  "positive_days": 5
+}

@@ -1,0 +1,20 @@
+{
+  "freeze_date": "2026-08-31",
+  "complete_dates": [
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04"
+  ],
+  "buffer_bp": 1.0,
+  "direction_threshold": 0.6,
+  "magnitude_threshold": 0.65,
+  "days": 4,
+  "trades": 166,
+  "positive_days": 1,
+  "net_mean_bp": -3.469872519809713,
+  "net_median_bp": -1.5158134119373532,
+  "net_sum_bp": -575.9988382884123,
+  "winsorized_net_mean_bp": -3.146725452242454,
+  "hit_rate": 0.40963855421686746
+}

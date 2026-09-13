@@ -1,0 +1,108 @@
+{
+  "version": "MR30_V3_FROZEN_20260906",
+  "status": "SHADOW_ONLY",
+  "frozen_at": "2026-09-06",
+  "historical_cutoff": "2026-09-01T00:00:00Z",
+  "fresh_forward_start": "2026-09-06 13:37:00",
+  "alpha": {
+    "horizon_minutes": 30,
+    "score": "-0.75*z(ret_5m)-0.25*z(ret_1m)",
+    "tail_q": 0.05,
+    "short_if_score_le": -1.3313387879339407,
+    "long_if_score_ge": 1.3199862718507427,
+    "max_entry_spread_bp": 2.0,
+    "non_overlap_minutes_per_ticker": 30
+  },
+  "normalization": {
+    "ret_5m_mean": -1.5618740214060845e-05,
+    "ret_5m_std": 0.002002592241402722,
+    "ret_1m_mean": -3.32150342172902e-06,
+    "ret_1m_std": 0.0008796108237247654
+  },
+  "training_dates": [
+    "2026-07-28",
+    "2026-07-29",
+    "2026-07-30",
+    "2026-07-31",
+    "2026-08-03",
+    "2026-08-04",
+    "2026-08-05",
+    "2026-08-06",
+    "2026-08-07",
+    "2026-08-10",
+    "2026-08-11",
+    "2026-08-12",
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-24"
+  ],
+  "validation_dates": [
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-31"
+  ],
+  "arms": {
+    "BASE": {
+      "enabled": true,
+      "rules": []
+    },
+    "NO_BROAD_TREND": {
+      "enabled": true,
+      "rules": [
+        "breadth_extreme <= 0.70"
+      ],
+      "breadth_max": 0.7
+    },
+    "NO_FLOW_CONFIRM": {
+      "enabled": true,
+      "rules": [
+        "ofi_confirm + tfi_confirm <= 1"
+      ],
+      "max_flow_confirmations": 1
+    }
+  },
+  "execution_assumption": {
+    "roundtrip_fee_bp": 1.0,
+    "cost_formula": "entry_half_spread+exit_half_spread+1bp_fee"
+  },
+  "research_reference": {
+    "base": {
+      "trades": 1809,
+      "net_mean_bp": 2.0166,
+      "positive_days": 5,
+      "test_days": 11
+    },
+    "no_broad_trend": {
+      "trades": 514,
+      "net_mean_bp": 2.5999,
+      "positive_days": 9,
+      "test_days": 11
+    },
+    "no_flow_confirm": {
+      "trades": 987,
+      "net_mean_bp": 1.8221,
+      "positive_days": 7,
+      "test_days": 11
+    }
+  },
+  "forward_rules": {
+    "do_not_retrain": true,
+    "do_not_change_thresholds": true,
+    "do_not_blacklist_tickers": true,
+    "do_not_switch_long_short": true,
+    "no_real_orders": true
+  },
+  "forward_start_amendment": {
+    "previous": "2026-09-07",
+    "new": "2026-09-06 13:37:00 UTC",
+    "reason": "MOEX weekend session was active; observer weekday filter was fixed after strategy freeze. Only post-freeze minutes are admitted.",
+    "strategy_parameters_changed": false
+  }
+}

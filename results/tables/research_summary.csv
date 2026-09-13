@@ -1,0 +1,8 @@
+stage,artifact,key_result,interpretation
+OFI microstructure,results/json/ofi_results.json,"45 days; 1,361,485 bars; ROC-AUC 0.562; cost 4.7 bp","weak predictive signal, negative edge after modeled costs"
+MR30 frozen,results/json/mr30_v3_frozen.json,"NO_BROAD_TREND: 514 trades; +2.5999 bp mean; 9/11 positive days","historical edge under initial low-cost assumption"
+Forward multi-day,results/json/forward_eval_multiday_summary.json,"166 trades; -3.4699 bp mean; 1/4 positive days","frozen historical edge did not transfer"
+Triple barrier 6bp,results/tables/exact_cost_candidate_summary.csv,"score 1.5: 131 trades; +806.5 bp; +6.16 bp mean; 4/5 windows","pre-forward robust, but failed Sep 6-9"
+Broker sandbox,results/sandbox/mr30_sandbox_journal.csv,"78 closes; -52.28 RUB gross; 93.84 RUB commission; -146.12 RUB net","execution costs materially affect economics"
+Regime flip,results/tables/regime_flip_results.csv,"only pre-robust threshold 0.40; Sep6-9 -309.5 bp; fresh -97.2 bp","direction switch did not restore robustness"
+Flow momentum,results/tables/flow_momentum_results.csv,"no strict pre-robust survivor","independent momentum branch rejected by predeclared criteria"

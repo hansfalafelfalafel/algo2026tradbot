@@ -1,0 +1,51 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Models / large generated artifacts
+models/*
+!models/.gitkeep
+reports/*
+!reports/.gitkeep
+
+# Raw market data and large caches
+data_cache/
+state/
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.gz
+
+# Runtime logs / state
+*.log
+*.pid
+*.tmp
+*.bak*
+*.backup*
+*.corrupt*
+
+# Local outputs
+outputs/
+artifacts/

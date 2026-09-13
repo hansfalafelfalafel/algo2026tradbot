@@ -1,0 +1,13 @@
+{
+  "architecture": "mr30_plus_validation_selected_regime",
+  "historical_only": true,
+  "horizon_min": 30,
+  "max_entry_spread_bp": 2.0,
+  "test_days": 11,
+  "trades": 1578,
+  "net_mean_bp": -0.05780799420614206,
+  "net_median_bp": 2.868922472000122,
+  "winsorized_net_mean_bp": 0.41196345032695925,
+  "net_sum_bp": -91.22101485729218,
+  "hit_rate": 0.5405576679340938
+}

@@ -1,0 +1,155 @@
+data:
+  figi: BBG004730N88
+  ticker: SBER
+  tickers:
+  - LKOH
+  - ROSN
+  - GAZP
+  - TATN
+  - NVTK
+  - SNGS
+  - SIBN
+  - BANE
+  - TRNFP
+  - SNGSP
+  - TATNP
+  - GMKN
+  - CHMF
+  - NLMK
+  - MAGN
+  - PLZL
+  - ALRS
+  - RUAL
+  - SBER
+  - SBERP
+  - VTBR
+  - MOEX
+  - CBOM
+  - BSPB
+  - MGNT
+  - MVID
+  - LENT
+  - AGRO
+  - FIXP
+  - MTSS
+  - RTKM
+  - AFKS
+  - SGZH
+  - HYDR
+  - IRAO
+  - FEES
+  - UPRO
+  - AFLT
+  - PHOR
+  - AKRN
+  figis:
+    LKOH: BBG004731032
+    ROSN: BBG004731354
+    GAZP: BBG004730RP0
+    TATN: BBG004RVFFC0
+    NVTK: BBG00475KKY8
+    SNGS: BBG0047315D0
+    SIBN: BBG004S684M6
+    BANE: BBG004S68758
+    TRNFP: BBG00475KHX6
+    SNGSP: BBG004S681M2
+    TATNP: BBG004S68829
+    GMKN: BBG004731489
+    CHMF: BBG00475K6C3
+    NLMK: BBG004S681B4
+    MAGN: BBG004S68507
+    PLZL: BBG000R607Y3
+    ALRS: BBG004S68B31
+    RUAL: BBG008F2T3T2
+    SBER: BBG004730N88
+    SBERP: BBG0047315Y7
+    VTBR: BBG004730ZJ9
+    MOEX: BBG004730JJ5
+    CBOM: BBG009GSYN76
+    BSPB: BBG000QJW156
+    MGNT: BBG004RVFCY3
+    MVID: BBG004S68CP5
+    LENT: BBG0063FKTD9
+    AGRO: BBG007N0Z367
+    FIXP: BBG00ZHCX1X2
+    MTSS: BBG004S681W1
+    RTKM: BBG004S682Z6
+    AFKS: BBG004S68614
+    SGZH: BBG0100R9963
+    HYDR: BBG00475K2X9
+    IRAO: BBG004S68473
+    FEES: BBG00475JZZ6
+    UPRO: BBG004S686W0
+    AFLT: BBG004S683W7
+    PHOR: BBG004S689R0
+    AKRN: BBG004S688G4
+  interval: day
+  history_days: 1825
+  train_ratio: 0.7
+  val_ratio: 0.15
+  cache_dir: data_cache
+features:
+  window_size: 30
+  use_indicators: true
+env:
+  initial_balance: 100000.0
+  commission: 0.0005
+  slippage: 0.0002
+  allow_short: true
+  reward_scaling: 100.0
+  max_gross: 1.0
+  turnover_penalty: 0.001
+  dd_penalty: 1.0
+  dd_limit: 0.1
+  risk_off_strength: 0.5
+news:
+  enabled: true
+  backend: lexicon
+  hf_model: blanchefort/rubert-base-cased-sentiment
+  llm_model: gpt-4o-mini
+  feeds: []
+  ema_span: 3
+  risk_off_threshold: -0.2
+agent:
+  algo: PPO
+  total_timesteps: 200000
+  learning_rate: 0.0003
+  gamma: 0.99
+  seed: 42
+  sac_buffer_size: 50000
+  model_dir: models
+  model_name: ppo_sber_hour
+sandbox:
+  pay_in: 1000000.0
+  lots_per_trade: 1
+  poll_interval_sec: 60
+execution:
+  mode: manual
+  poll_interval_sec: 10
+  rebalance_threshold: 0.03
+  limits:
+    max_invest_rub: 300000
+    max_order_rub: 50000
+    max_position_weight: 0.35
+    max_gross_exposure: 0.8
+    max_trades_per_day: 20
+    min_seconds_between_orders: 5
+    max_daily_loss_pct: 0.05
+    confirm_above_rub: 100000
+    allow_short: false
+    whitelist:
+    - SBER
+    - GAZP
+    - LKOH
+forecast:
+  horizon_days: 90
+  n_simulations: 2000
+  percentiles:
+  - 5
+  - 50
+  - 95
+schedule:
+  daily_times:
+  - 09:00
+  - '18:30'
+  every_minutes: 0
