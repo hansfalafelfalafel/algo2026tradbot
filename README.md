@@ -323,7 +323,6 @@ pylint src --max-line-length=120 --disable="C0103,C0114,C0115"
 ## 14. Дополнительная документация
 
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — подробная архитектура;
-- [`docs/EDGE_ARCHITECTURE.md`](docs/EDGE_ARCHITECTURE.md) — исследовательская логика поиска edge;
 - [`docs/QUICKSTART.md`](docs/QUICKSTART.md) — установка и запуск;
 - [`docs/README_DEV.md`](docs/README_DEV.md) — карта исходного кода;
 - [`scripts/README.md`](scripts/README.md) — карта экспериментов;
