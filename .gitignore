@@ -15,7 +15,7 @@ __pycache__/
 htmlcov/
 .venv/
 venv/
-env/
+/env/
 
 # IDE / OS
 .vscode/
