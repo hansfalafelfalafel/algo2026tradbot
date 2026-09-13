@@ -10,5 +10,3 @@
 | Честный forward | `43–54` | forward evaluation, диагностика провала, freeze стратегии, regime research, shadow |
 | Broker sandbox | `55–58` | исполнение MR30 через песочницу, статистика, решения, Telegram |
 | Robustness / новые гипотезы | `59–73` | strategy lab, walk-forward, regime/cross-sectional, meta-gates, triple barrier, cost frontier, regime flip, flow momentum |
-
-Backup/corrupt-файлы и `__pycache__` из рабочей директории удалены из сдаваемой версии.
