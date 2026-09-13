@@ -1,17 +1,15 @@
-# Результаты, включённые в репозиторий
+В этой папке лежат только те файлы, которые нужны для проверки основных выводов проекта. 
 
-В эту папку включены только небольшие артефакты, достаточные для проверки ключевых выводов. Большие промежуточные датасеты и runtime-state исключены.
+## Что сохранено
 
-## Что здесь есть
+- `json/ofi_results.json` — итоговая сводка по эксперименту с OFI и микроструктурой рынка.
+- `json/mr30_v3_frozen.json` — параметры стратегии MR30, зафиксированные до проверки на новых данных.
+- `json/forward_eval_multiday_summary.json` — результаты первой проверки MR30 после фиксации параметров.
+- `tables/mr30_exact_ablation_leaderboard.csv` — сравнение вариантов MR30 с разными фильтрами.
+- `sandbox/mr30_sandbox_journal.csv` — журнал сделок в песочнице брокера.
+- `tables/triple_barrier_cost_frontier.csv` — проверка Triple Barrier при разных торговых издержках.
+- `tables/exact_cost_candidate_summary.csv` — подробная проверка выбранных кандидатов с учётом стоимости исполнения.
+- `tables/regime_flip_results.csv` — результаты эксперимента с переключением логики стратегии в зависимости от состояния рынка.
+- `tables/flow_momentum_results.csv` — результаты отдельной momentum-стратегии с подтверждением по потоку заявок и сделок.
 
-- `json/ofi_results.json` — актуальная сводка OFI/microstructure эксперимента.
-- `json/mr30_v3_frozen.json` — замороженная спецификация MR30 до forward-проверки.
-- `json/forward_eval_multiday_summary.json` — результат раннего forward после freeze.
-- `tables/mr30_exact_ablation_leaderboard.csv` — ablation базового MR-сигнала.
-- `sandbox/mr30_sandbox_journal.csv` — журнал сделок брокерской песочницы.
-- `tables/triple_barrier_cost_frontier.csv` — чувствительность triple-barrier стратегии к стоимости исполнения.
-- `tables/exact_cost_candidate_summary.csv` — точный cost robustness для двух кандидатов.
-- `tables/regime_flip_results.csv` — проверка regime-flip.
-- `tables/flow_momentum_results.csv` — независимая flow-confirmed momentum ветка.
-
-`*_best_trade_examples.csv` и `*_worst_trade_examples.csv` — только иллюстрации отдельных сделок для разбора; они не используются как оценка общей доходности.
+Файлы `*_best_trade_examples.csv` и `*_worst_trade_examples.csv` содержат примеры отдельных удачных и неудачных сделок. Они нужны для разбора конкретных случаев и не используются как оценка общей прибыльности стратегии.
