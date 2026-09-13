@@ -23,12 +23,6 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Models / large generated artifacts
-models/*
-!models/.gitkeep
-reports/*
-!reports/.gitkeep
-
 # Raw market data and large caches
 data_cache/
 state/
